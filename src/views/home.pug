@@ -10,11 +10,28 @@ html(lang="en")
         header
             h1 Noom
         main
-            form#nick
-                input(type="text", placeholder="type your nickname", required)
-                button Save
-            ul
-            form#message
-                input(type="text", placeholder="write a msg", required)
-                button Send 
+            div#welcome
+                form
+                    input(id="nick", placeholder="nickname", type="text")
+                    h4 Open Rooms (Please click):
+                    ul
+                    input(id="room_name", placeholder="room name", required, type="text")
+                    button Enter Room
+            div#room
+                h3(style="margin: 0px 10px;")
+                a(style="margin: 0px 10px;") modify
+                form#name
+                    div(style="display:flex; align-items:center;")
+                        input(style="width: 100%; margin: 0px 10px;", placeholder="nickname", type="text", required)
+                        button Modify 
+                form#msg
+                    h3
+                    ul(style="border: 1px solid; min-height: 200px; max-height: 200px; overflow:auto;")
+                    div(style="display:flex; align-items:center;")
+                        input(style="width: 100%; margin: 0px 10px;", placeholder="message", type="text", required)
+                        button Send
+                
+                
+
+        script(src="/socket.io/socket.io.js") 
         script(src="/public/js/app.js")
